@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="self.lsl.demo.provider.mapper.TestPoMapper" >
+    <resultMap id="testPoResultMap" type="self.lsl.demo.po.TestPo" >
+        <id column="id" property="id" jdbcType="VARCHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="age" property="age" jdbcType="INTEGER" />
+    </resultMap>
+    <sql id="test_po_column_list" >
+        id,name,age
+    </sql>
+
+    <select id="findAll" resultMap="testPoResultMap">
+        select * from test_po
+    </select>
+</mapper>
